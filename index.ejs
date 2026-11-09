@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="/images/pplogo.png" alt="PashaPrint" class="logo-img">
+      </a>
+      <div class="header-right">
+        <div class="header-contact">
+          <a href="tel:+994703022305"><i class="fas fa-phone"></i> 070 302 23 05</a>
+          <a href="https://instagram.com/pashaprintt" target="_blank"><i class="fab fa-instagram"></i> @pashaprintt</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-item <%= page === 'home' ? 'active' : '' %>">
+          <i class="fas fa-home"></i>
+          <span>Ana Səhifə</span>
+        </a>
+        <a href="/mehsullar" class="nav-item <%= page === 'mehsullar' ? 'active' : '' %>">
+          <i class="fas fa-box-open"></i>
+          <span>Məhsullar</span>
+        </a>
+        <a href="/xidmetler" class="nav-item <%= page === 'xidmetler' ? 'active' : '' %>">
+          <i class="fas fa-cogs"></i>
+          <span>Xidmətlər</span>
+        </a>
+        <a href="/qiymetler" class="nav-item <%= page === 'qiymetler' ? 'active' : '' %>">
+          <i class="fas fa-tags"></i>
+          <span>Qiymətlər</span>
+        </a>
+        <a href="/haqqimizda" class="nav-item <%= page === 'haqqimizda' ? 'active' : '' %>">
+          <i class="fas fa-info-circle"></i>
+          <span>Haqqımızda</span>
+        </a>
+        <a href="/elaqe" class="nav-item <%= page === 'elaqe' ? 'active' : '' %>">
+          <i class="fas fa-envelope"></i>
+          <span>Əlaqə</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <% if (page === 'home') { %>
+        <%- include('partials/home') %>
+      <% } else if (page === 'mehsullar') { %>
+        <%- include('partials/mehsullar') %>
+      <% } else if (page === 'xidmetler') { %>
+        <%- include('partials/xidmetler') %>
+      <% } else if (page === 'qiymetler') { %>
+        <%- include('partials/qiymetler') %>
+      <% } else if (page === 'haqqimizda') { %>
+        <%- include('partials/haqqimizda') %>
+      <% } else if (page === 'elaqe') { %>
+        <%- include('partials/elaqe') %>
+      <% } %>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="/" class="logo footer-logo">
+          <img src="/images/pplogo.png" alt="PashaPrint" class="logo-img">
+        </a>
+        <p class="footer-desc">Reklam, Qablaşdırma və Seriqrafiya sahəsində peşəkar xidmətlər.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Məhsullar</h4>
+        <ul>
+          <li><a href="/mehsullar">Polietilen Paketlər</a></li>
+          <li><a href="/mehsullar">Atlas & Reps Lent</a></li>
+          <li><a href="/mehsullar">Kraft Paketlər</a></li>
+          <li><a href="/mehsullar">Sticker & Vizitkart</a></li>
+          <li><a href="/mehsullar">Ətir Qutuları</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Əlaqə</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> 070 302 23 05</li>
+          <li><i class="fab fa-instagram"></i> @pashaprintt</li>
+          <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sosial Media</h4>
+        <div class="social-links">
+          <a href="https://instagram.com/pashaprintt" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/994703022305" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PashaPrint. Bütün hüquqlar qorunur.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/994703022305" class="whatsapp-float" target="_blank" aria-label="WhatsApp ilə əlaqə">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
